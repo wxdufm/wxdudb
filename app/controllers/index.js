@@ -1,4 +1,5 @@
 var controllers = exports;
 
 controllers.main = require('./main');
-controllers.users = require('./user');
+controllers.user = require('./user');
+controllers.release = require('./release');

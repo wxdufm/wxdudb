@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+  h1= 'New Release'
+  form(method='post', action='/releases')
+    label(for="title") Title
+    input#title(type='text', name="release[title]")
+
+    label(for="artist") Artist
+    input#artist(type='text', name="release[artist]")
+
+    label(for="label") Label
+    input#label(type='text', name="release[label]")
+
+    label(for="status") Status
+    input#status(type='text', name="release[status]")
+
+    label(for="date_received") Date Received
+    input#date_received(type='text', name="release[date_received]")
+
+    label(for="library_genre") Library Genre
+    input#library_genre(type='text', name="release[library_genre]")
+
+    label(for="charts_genre") Charts Genre
+    input#charts_genre(type='text', name="release[charts_genre]")
+
+    label(for="charts_subgenre") Charts Subgenre
+    input#charts_subgenre(type='text', name="release[charts_subgenre]")
+
+    label(for="reviewer") Reviewer
+    input#reviewer(type='text', name="release[reviewer]")
+
+    label(for="medium") Medium
+    input#medium(type='text', name="release[medium]")
+
+    input(type='submit')

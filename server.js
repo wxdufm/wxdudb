@@ -2,6 +2,14 @@ var express = require('express');
 var routes = require('./app/routes');
 var http = require('http');
 var path = require('path');
+var mongoose = require('mongoose');
+try {
+  var config = require('./config.local');
+} catch (e) {
+  var config = require('./config');
+}
+
+mongoose.connect(config.db.address + config.db.name);
 
 var app = express();
 
