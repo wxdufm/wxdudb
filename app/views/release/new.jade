@@ -2,6 +2,8 @@ extends ../layout
 
 block content
   h1= 'Enter a New Release'
+  form(method='get',action='/releases')
+    input(type="submit",value="View Database")
   form(method='post', action='/releases')
       ul
         li
