@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+	h1='All Releases'
+	ul
+		each release, i in releases
+			li
+			p #{release.artist}
+			p #{release.title}
+			p #{release.status}
+			p #{release.date_received}
+			p #{i}

@@ -4,7 +4,8 @@ exports.index = function(req, res, next) {
   Release.find({}, function(err, releases) {
     if (err)
       return next(err);
-    res.send(releases);
+    //TO-DO: render a view of the releases object
+    res.render('release/list', {"releases" : releases});
   });
 };
 
