@@ -1,0 +1,60 @@
+form.form-horizontal(method='post', action='/releases', role='form')
+  .form-group
+    label.control-label.col-xs-2(for="title") Title (*required)
+    .col-xs-3
+      input.form-control#title(type='text', name="release[title]")
+
+  .form-group
+    label.control-label.col-xs-2(for="artist") Artist (*required)
+    .col-xs-3
+      input.form-control#artist(type='text', name="release[artist]")
+
+  .form-group
+    label.control-label.col-xs-2(for="label") Label
+    .col-xs-3
+      input.form-control#label(type='text', name="release[label]")
+
+  .form-group
+    label.control-label.col-xs-2(for="status") Status (*required)
+    .col-xs-3
+      input.form-control#status(type='text', name="release[status]")
+
+  .form-group
+    label.control-label.col-xs-2(for="date_received")
+      | Date Received (mm/dd/yyyy)
+    .col-xs-3
+      input.form-control#date_received(
+        type='text', name="release[date_received]")
+
+  .form-group
+    label.control-label.col-xs-2(for="library_genre") Library Genre
+    .col-xs-3
+      input.form-control#library_genre(
+        type='text', name="release[library_genre]")
+
+  .form-group
+    label.control-label.col-xs-2(for="charts_genre") Charts Genre
+    .col-xs-3
+      input.form-control#charts_genre(
+        type='text', name="release[charts_genre]")
+
+  .form-group
+    label.control-label.col-xs-2(for="charts_subgenre") Charts Subgenre
+    .col-xs-3
+      input.form-control#charts_subgenre(
+        type='text', name="release[charts_subgenre]")
+
+  .form-group
+    label.control-label.col-xs-2(for="reviewer") Reviewer
+    .col-xs-3
+      input.form-control#reviewer(type='text', name="release[reviewer]")
+
+  .form-group
+    label.control-label.col-xs-2(for="medium") Medium
+    .col-xs-3
+      input.form-control#medium(type='text', name="release[medium]")
+
+  .form-group
+    .col-xs-offset-2.col-xs-3
+      button.btn.btn-default(type='submit') Submit
+

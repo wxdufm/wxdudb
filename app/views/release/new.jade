@@ -1,52 +1,8 @@
 extends ../layout
 
 block content
-  h1= 'Enter a New Release'
-  form(method='get',action='/releases')
-    input(type="submit",value="View Database")
-  form(method='post', action='/releases')
-      ul
-        li
-        label(for="title") Title (*required)
-        input#title(type='text', name="release[title]")
-
-        li
-        label(for="artist") Artist (*required)
-        input#artist(type='text', name="release[artist]")
-
-        li
-        label(for="label") Label
-        input#label(type='text', name="release[label]")
-
-        li
-        label(for="status") Status (*required)
-        input#status(type='text', name="release[status]")
-
-        li
-        label(for="date_received") Date Received (mm/dd/yyyy)
-        input#date_received(type='text', name="release[date_received]")
-
-        li
-        label(for="library_genre") Library Genre
-        select#library_genre(name="release[library_genre]")
-          each genre in validGenres
-            option= genre
-
-        li
-        label(for="charts_genre") Charts Genre
-        input#charts_genre(type='text', name="release[charts_genre]")
-
-        li
-        label(for="charts_subgenre") Charts Subgenre
-        input#charts_subgenre(type='text', name="release[charts_subgenre]")
-
-        li
-        label(for="reviewer") Reviewer
-        input#reviewer(type='text', name="release[reviewer]")
-        
-        li
-        label(for="medium") Medium
-        input#medium(type='text', name="release[medium]")
-
-        li
-        input(type='submit')
+  .container
+    .row
+      .col-xs-12
+        h1= 'New Release'
+        include _form
