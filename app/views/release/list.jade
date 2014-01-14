@@ -9,11 +9,14 @@ block content
 	ul
 		each release, i in releases
 			li
+			p #{i}
 			p #{release.artist}
 			p #{release.title}
 			p #{release.status}
 			p #{release.date_received}
-			p #{i}
 			form(method='get', action="/releases/:id/delete")
 				input(name="_id",type="hidden",value=release._id.toHexString())
 				input(id="delete",value="X",type='submit')
+			form(method='get',action="/releases/:id/print")
+				input(name="_id",type="hidden",value=release._id.toHexString())
+				input(id="print",value="Export as Label",type='submit')

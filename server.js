@@ -1,15 +1,8 @@
 var express = require('express');
 var routes = require('./app/routes');
+var user = require('./app/routes/user');
 var http = require('http');
 var path = require('path');
-var mongoose = require('mongoose');
-try {
-  var config = require('./config.local');
-} catch (e) {
-  var config = require('./config');
-}
-
-mongoose.connect(config.db.address + config.db.name);
 
 var app = express();
 
@@ -29,8 +22,9 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-routes.init(app);
+app.get('/', routes.index);
+app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function() {
+http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
