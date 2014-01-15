@@ -1,22 +1,20 @@
 extends ../layout
 
 block content
-	h1='All Releases'
-	form(method='get', action="/releases/:id/deleteAll")
-		input(id="delete",value="Delete All",type='submit')
-	form(method='get', action='/releases/new')
-		input(id="create",value="Create New",type='submit')
-	ul
-		each release, i in releases
-			li
-			p #{i}
-			p #{release.artist}
-			p #{release.title}
-			p #{release.status}
-			p #{release.date_received}
-			form(method='get', action="/releases/:id/delete")
-				input(name="_id",type="hidden",value=release._id.toHexString())
-				input(id="delete",value="X",type='submit')
-			form(method='get',action="/releases/:id/print")
-				input(name="_id",type="hidden",value=release._id.toHexString())
-				input(id="print",value="Export as Label",type='submit')
+  .container
+    .row
+      .col-xs-12
+        h1='All Releases'
+        table.table
+          thead
+            th Artist
+            th Title
+            th Status
+            th Date Received
+          each release, i in releases
+            tr
+              td #{release.artist}
+              td #{release.title}
+              td #{release.status}
+              td #{release.date_received}
+

@@ -7,11 +7,12 @@ module.exports = function(grunt) {
         options: {
           file: 'server.js',
           nodeArgs: ['--debug'],
+          ignoredFiles: ['test/**', 'node_modules/**']
         }
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'server.js', 'public/javascripts', 'app/']
+      all: ['Gruntfile.js', 'server.js', 'public/javascripts', 'app/', 'test/']
     },
     bower: {
       install: {
@@ -19,12 +20,19 @@ module.exports = function(grunt) {
           targetDir: 'public/vendor'
         }
       }
+    },
+    mochaTest: {
+      options: {
+        require: ['should']
+      },
+      src: ['test/**/*.js']
     }
   });
 
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
   grunt.registerTask('default', ['nodemon']);
 
