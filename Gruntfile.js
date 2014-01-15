@@ -11,12 +11,20 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'server.js', 'public/javascripts', 'app/routes']
+      all: ['Gruntfile.js', 'server.js', 'public/javascripts', 'app/']
+    },
+    bower: {
+      install: {
+        options: {
+          targetDir: 'public/vendor'
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-bower-task');
 
   grunt.registerTask('default', ['nodemon']);
 
