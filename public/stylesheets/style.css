@@ -6,3 +6,19 @@ body {
 a {
   color: #00B7FF;
 }
+
+.container#releases {
+  position:fixed;
+  top:30px;
+  right:5px;
+}
+
+.container#options{
+  position:fixed;
+  top:30px;
+  right:200px;
+}
+
+.options,._id {
+  visibility:collapse;
+}
