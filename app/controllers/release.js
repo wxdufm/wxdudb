@@ -1,4 +1,5 @@
 var Release = require('../models/release');
+var util = require('../util');
 
 exports.index = function(req, res, next) {
   Release.find({}, function(err, releases) {
@@ -8,10 +9,21 @@ exports.index = function(req, res, next) {
   });
 };
 
+exports.detail = function(req, res, next) {
+  Release.findById(req.params.id, function(err, release) {
+    if (err)
+      return next(err);
+    res.render('release/detail', {
+      'release': release.toJSON(),
+      'releaseDisplay': util.prettyJsonKeys(release.toJSON())
+    });
+  });
+};
+
 exports.remove = function(req,res,next){
   Release.remove({_id:req.param('_id')}, function(err,docs){
     if(err)
-      return next(err)
+      return next(err);
     res.redirect('/releases');
   });
 };
@@ -19,7 +31,7 @@ exports.remove = function(req,res,next){
 exports.removeAll = function(req,res,next){
   Release.remove({},function(err,docs){
     if(err)
-      return next(err)
+      return next(err);
     res.redirect('/releases');
   });
 };

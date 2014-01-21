@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         options: {
           file: 'server.js',
           nodeArgs: ['--debug'],
-          ignoredFiles: ['test/**', 'node_modules/**']
+          watch: ['app']
         }
       }
     },
