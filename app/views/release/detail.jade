@@ -1,5 +1,8 @@
 extends ../layout
 
+block variables
+  - var title = release.title + ' by ' + release.artist
+
 block content
   .container
     .row

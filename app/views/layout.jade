@@ -1,6 +1,8 @@
 doctype html
+block variables
 html
   head
+    - var title = title || 'WXDU DB'
     title= title
     link(rel='stylesheet', href='/vendor/bootstrap/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
