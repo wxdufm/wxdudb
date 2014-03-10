@@ -28,7 +28,9 @@ block content
 
         li
         label(for="library_genre") Library Genre
-        input#library_genre(type='text', name="release[library_genre]")
+        select#library_genre(name="release[library_genre]")
+          each genre in validGenres
+            option= genre
 
         li
         label(for="charts_genre") Charts Genre

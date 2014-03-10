@@ -1,5 +1,6 @@
 var Release = require('../models/release');
 var util = require('../util');
+var genres = require('../../lib/genres');
 
 exports.index = function(req, res, next) {
   Release.find({}, function(err, releases) {
@@ -36,8 +37,10 @@ exports.removeAll = function(req,res,next){
   });
 };
 
-exports.new = function(req, res, next) {
-  res.render('release/new');
+exports.newRelease = function(req, res, next) {
+  res.render('release/new', {
+    'validGenres': genres.validGenres()
+  });
 };
 
 exports.create = function(req, res, next) {
