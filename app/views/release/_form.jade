@@ -17,7 +17,9 @@ form.form-horizontal(method='post', action='/releases', role='form')
   .form-group
     label.control-label.col-xs-2(for="status") Status (*required)
     .col-xs-3
-      input.form-control#status(type='text', name="release[status]")
+      select#status(name="release[status]")
+        each status in validStatuses
+          option= status
 
   .form-group
     label.control-label.col-xs-2(for="date_received")
@@ -29,8 +31,9 @@ form.form-horizontal(method='post', action='/releases', role='form')
   .form-group
     label.control-label.col-xs-2(for="library_genre") Library Genre
     .col-xs-3
-      input.form-control#library_genre(
-        type='text', name="release[library_genre]")
+      select#library_genre(name="release[library_genre]")
+        each genre in validGenres
+          option= genre
 
   .form-group
     label.control-label.col-xs-2(for="charts_genre") Charts Genre
