@@ -6,6 +6,7 @@ var ReleaseSchema = new Schema({
   title: {type: String, required: true},
   label: {type: String},
   status: {type: String, required: true},
+  playlist_date: {type: Date},
   date_received: {type: Date, default: Date.now},
   library_genre: {type: String},
   charts_subgenre: {type: String},
