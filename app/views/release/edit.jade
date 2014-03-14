@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  - put = true
+  .container
+    .row
+      .col-xs-12
+        h1= 'Edit Release'
+        form.form-horizontal(method='post', action='/releases/' + release._id, role='form')
+          input(type='hidden', name='_method', value='put')
+          include _form_fields

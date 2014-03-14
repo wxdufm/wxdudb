@@ -41,6 +41,7 @@ exports.removeAll = function(req,res,next){
 
 exports.newRelease = function(req, res, next) {
   res.render('release/new', {
+    'release': new Release(),
     'validGenres': genres.validOptions(),
     'validStatuses': statuses.validOptions(),
   });
@@ -52,5 +53,26 @@ exports.create = function(req, res, next) {
     if (err)
       return next(err);
     res.redirect('/releases');
+  });
+};
+
+exports.update = function(req, res, next) {
+  Release.findOneAndUpdate(
+      {_id: req.params.id}, req.body.release, function(err, release) {
+    if (err)
+      return next(err);
+    res.redirect('/releases/' + req.params.id);
+  });
+};
+
+exports.edit = function(req, res, next) {
+  Release.findById(req.params.id, function(err, release) {
+    if (err)
+      return next(err);
+    res.render('release/edit', {
+      'release': release,
+      'validGenres': genres.validOptions(),
+      'validStatuses': statuses.validOptions(),
+    });
   });
 };

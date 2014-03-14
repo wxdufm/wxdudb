@@ -1,0 +1,68 @@
+.form-group
+  label.control-label.col-xs-2(for="title") Title (*required)
+  .col-xs-3
+    input.form-control#title(type='text', name="release[title]", value=release.title)
+
+.form-group
+  label.control-label.col-xs-2(for="artist") Artist (*required)
+  .col-xs-3
+    input.form-control#artist(type='text', name="release[artist]", value=release.artist)
+
+.form-group
+  label.control-label.col-xs-2(for="label") Label
+  .col-xs-3
+    input.form-control#label(type='text', name="release[label]", value=release.label)
+
+.form-group
+  label.control-label.col-xs-2(for="status") Status (*required)
+  .col-xs-3
+    select#status(name="release[status]")
+      each status in validStatuses
+        option(selected=release.status==status)= status
+
+.form-group
+  label.control-label.col-xs-2(for="playlist_date") Playlist Date
+  .col-xs-3
+    input.form-control#playlist_date(
+      type='date', name="release[playlist_date]", value=release.playlist_date)
+
+.form-group
+  label.control-label.col-xs-2(for="date_received")
+    | Date Received (mm/dd/yyyy)
+  .col-xs-3
+    input.form-control#date_received(
+      type='date', name="release[date_received]", value=release.date_received)
+
+.form-group
+  label.control-label.col-xs-2(for="library_genre") Library Genre
+  .col-xs-3
+    select#library_genre(name="release[library_genre]")
+      each genre in validGenres
+        option(selected=genre==release.library_genre)= genre
+
+.form-group
+  label.control-label.col-xs-2(for="charts_genre") Charts Genre
+  .col-xs-3
+    input.form-control#charts_genre(
+      type='text', name="release[charts_genre]", value=release.charts_genre)
+
+.form-group
+  label.control-label.col-xs-2(for="charts_subgenre") Charts Subgenre
+  .col-xs-3
+    input.form-control#charts_subgenre(
+      type='text', name="release[charts_subgenre]", value=release.charts_subgenre)
+
+.form-group
+  label.control-label.col-xs-2(for="reviewer") Reviewer
+  .col-xs-3
+    input.form-control#reviewer(type='text', name="release[reviewer]", value=release.reviewer)
+
+.form-group
+  label.control-label.col-xs-2(for="medium") Medium
+  .col-xs-3
+    input.form-control#medium(type='text', name="release[medium]", value=release.medium)
+
+.form-group
+  .col-xs-offset-2.col-xs-3
+    button.btn.btn-default(type='submit') Submit
+

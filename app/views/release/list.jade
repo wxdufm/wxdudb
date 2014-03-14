@@ -15,8 +15,8 @@ block content
         table.table-bordered#releases
           thead
             th.options Select
-            th Artist
             th Title
+            th Artist
             th Status
             th Date Received
             th._id RELEASE ID
@@ -26,8 +26,9 @@ block content
                 td.options 
                   div.select
                     input(type="checkbox")
+                td
+                  a(href='releases/' + release._id) #{release.title}
                 td #{release.artist}
-                td #{release.title}
                 td #{release.status}
                 td #{release.date_received}
                 td._id #{release._id}
