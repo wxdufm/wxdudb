@@ -24,14 +24,14 @@
   label.control-label.col-xs-2(for="playlist_date") Playlist Date
   .col-xs-3
     input.form-control#playlist_date(
-      type='date', name="release[playlist_date]", value=release.playlist_date)
+      type='date', name="release[playlist_date]", value=dateToHTMLValue(release.playlist_date))
 
 .form-group
   label.control-label.col-xs-2(for="date_received")
     | Date Received (mm/dd/yyyy)
   .col-xs-3
     input.form-control#date_received(
-      type='date', name="release[date_received]", value=release.date_received)
+      type='date', name="release[date_received]", value=dateToHTMLValue(release.date_received))
 
 .form-group
   label.control-label.col-xs-2(for="library_genre") Library Genre

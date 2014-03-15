@@ -3,6 +3,9 @@ var routes = require('./app/routes');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
+var helpers = require('./app/helpers');
+var _ = require('underscore');
+
 try {
   var config = require('./config.local');
 } catch (e) {
@@ -29,6 +32,8 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+_.extend(app.locals, helpers);
 
 // development only
 if ('development' == app.get('env')) {
