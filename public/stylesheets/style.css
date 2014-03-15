@@ -18,3 +18,16 @@ body {
 .options,._id {
   visibility:collapse;
 }
+
+ul.button-list {
+  padding-left: 0px;
+}
+
+ul.button-list li {
+  display: inline;
+  list-style-type: none;
+}
+
+ul.button-list li:after {
+  content: ' ';
+}

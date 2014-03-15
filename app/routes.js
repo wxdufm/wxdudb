@@ -10,6 +10,6 @@ exports.init = function(app) {
   app.get("/releases/:id", controllers.release.detail);
   app.get("/releases/:id/edit", controllers.release.edit);
   app.put("/releases/:id", controllers.release.update);
-  app.get("/releases/:id/delete",controllers.release.remove);
+  app.del("/releases/:id", controllers.release.remove);
   app.get("/releases/:id/deleteAll",controllers.release.removeAll);
 };

@@ -23,11 +23,11 @@ exports.detail = function(req, res, next) {
   });
 };
 
-exports.remove = function(req,res,next){
-  Release.remove({_id:req.param('_id')}, function(err,docs){
+exports.remove = function(req, res, next){
+  Release.remove({_id: req.param('id')}, function(err){
     if(err)
       return next(err);
-    res.redirect('/releases');
+    res.send(200);
   });
 };
 

@@ -13,4 +13,8 @@ block content
             tr
               td= key
               td= val
-    a.btn.btn-default(href='/releases/' + release._id + '/edit' role="button") Edit
+    ul.button-list
+      li
+        a.btn.btn-default(href='/releases/' + release._id + '/edit' role="button") Edit
+      li
+        a.btn.btn-danger.delete-confirm(href='/releases/' + release._id role="button") Delete
